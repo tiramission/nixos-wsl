@@ -17,7 +17,7 @@
         "git"
         "prompt"
         "syntax-highlighting"
-        "ssh"
+        # "ssh"
       ];
       prompt.theme = "nicoulaj";
       ssh.identities = ["id_ed25519" "id_ed25519_sign"];
