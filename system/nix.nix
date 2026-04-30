@@ -19,4 +19,7 @@
     optimise.automatic = true;
   };
   nixpkgs.config.allowUnfree = true;
+
+  programs.nix-ld.enable = true;
+  time.timeZone = "Asia/Shanghai";
 }
