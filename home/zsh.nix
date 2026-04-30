@@ -4,6 +4,9 @@
     enable = true;
     oh-my-zsh = {
       enable = true;
+      plugins = [
+        "git"
+      ];
     };
     prezto = {
       enable = true;
@@ -14,7 +17,7 @@
         "history"
         "directory"
         "utility"
-        "git"
+        # "git"
         "prompt"
         "syntax-highlighting"
       ];
