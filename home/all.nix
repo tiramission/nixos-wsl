@@ -6,4 +6,5 @@
   ];
 
   home.stateVersion = osConfig.system.nixos.release;
+  xdg.enable = true;
 }
