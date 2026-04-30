@@ -4,5 +4,6 @@
     just
     # neovim
     sops
+    ssh-to-age
   ];
 }
