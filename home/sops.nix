@@ -44,13 +44,5 @@
   sops.defaultSopsFile = ../secrets/home.yaml;
   sops.age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
   sops.secrets = {
-    ssh-key = {
-      mode = "0600";
-      path = "${config.home.homeDirectory}/.ssh/id_ed25519";
-    };
-    ssh-sign-key = {
-      mode = "0600";
-      path = "${config.home.homeDirectory}/.ssh/id_ed25519_sign";
-    };
   };
 }
