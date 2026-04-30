@@ -12,3 +12,9 @@ wsl:
 
 apply: add
         nh os switch .
+
+gen-age SSHKEY:
+	@mkdir -p ~/.config/sops/age
+	cat {{SSHKEY}} | ssh-to-age -private-key > ~/.config/sops/age/keys.txt
+
+
