@@ -10,7 +10,6 @@
     enable = true;
     defaultUser = "nixos";
     useWindowsDriver = true;
-    wrapBinSh = false; # https://github.com/microsoft/vscode-remote-release/issues/10375
     ssh-agent.enable = true;
     wslConf.interop.appendWindowsPath = false;
   };
