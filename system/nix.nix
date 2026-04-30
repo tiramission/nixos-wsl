@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   nix = {
     package = pkgs.lixPackageSets.stable.lix;
     settings = {
@@ -21,5 +25,6 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = config.hardware.graphics.extraPackages;
   time.timeZone = "Asia/Shanghai";
 }
