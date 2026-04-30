@@ -6,7 +6,11 @@
     home-manager.url = "github:nix-community/home-manager";
     sops-nix.url = "github:Mic92/sops-nix";
 
-    nixpkgs.follows = "nixos-wsl/nixpkgs";
+    # nixpkgs.follows = "nixos-wsl/nixpkgs";
+
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
