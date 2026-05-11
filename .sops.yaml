@@ -1,4 +1,4 @@
-# generate pubkey: cat /to/path/id_ed25519 | ssh-keygen -y -f /dev/stdin | nix run ssh-to-age
+# generate pubkey: cat /to/path/id_ed25519 | ssh-keygen -y -f /dev/stdin | ssh-to-age
 # generage prikey: cat /to/path/id_ed25519 | ssh-to-age -private-key > ~/.config/sops/age/keys.txt
 
 creation_rules:
