@@ -5,10 +5,6 @@
   # users.users.${config.wsl.defaultUser}.extraGroups = ["incus-admin"];
   users.extraGroups.incus-admin.members = [config.wsl.defaultUser];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "minio-2025-10-15T17-29-55Z"
-  ];
-
   networking.firewall.trustedInterfaces = ["incusbr0"];
   virtualisation.incus = {
     enable = true;
