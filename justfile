@@ -1,5 +1,5 @@
 fmt:
-	alejandra .
+	alejandra -q .
 
 add: fmt
 	git add .
