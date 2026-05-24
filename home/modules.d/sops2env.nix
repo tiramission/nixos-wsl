@@ -4,14 +4,7 @@
   pkgs,
   ...
 }:
-with lib; let
-  cfg = config.sops2env;
-  envVars =
-    mapAttrs (
-      varName: secretName: "$(${pkgs.coreutils}/bin/cat ${config.sops.secrets.${secretName}.path} 2>/dev/null || :)"
-    )
-    cfg.variables;
-in {
+with lib; {
   options.sops2env = {
     enable = mkEnableOption "auto export sops secret to env" // {default = true;};
     variables = mkOption {
@@ -24,12 +17,30 @@ in {
       example = {GH_TOKEN = "gh-token";};
     };
   };
-  config = mkIf cfg.enable {
+  config = mkIf config.sops2env.enable {
+    # enable sops secrets
     sops.secrets = builtins.listToAttrs (
       map (secretName: nameValuePair secretName {})
-      (unique (attrValues cfg.variables))
+      (unique (attrValues config.sops2env.variables))
     );
 
-    home.sessionVariables = envVars;
+    # generate env shell
+    sops.templates."sops.env".content = lib.concatStringsSep "\n" (
+      map
+      (
+        name: let
+          secretName = config.sops2env.variables.${name};
+        in "export ${name}=${lib.escapeShellArg config.sops.placeholder.${secretName}}"
+      )
+      (builtins.attrNames config.sops2env.variables)
+    );
+
+    # setup env
+    programs.zsh.initContent = mkIf config.programs.zsh.enable ''
+      source ${config.sops.templates."sops.env".path}
+    '';
+    programs.bash.initExtra = mkIf config.programs.bash.enable ''
+      source ${config.sops.templates."sops.env".path}
+    '';
   };
 }
