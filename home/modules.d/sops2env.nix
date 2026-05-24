@@ -30,16 +30,16 @@ with lib; {
       (
         name: let
           secretName = config.sops2env.variables.${name};
-        in "export ${name}=${lib.escapeShellArg config.sops.placeholder.${secretName}}"
+        in "export ${name}=${config.sops.placeholder.${secretName}}"
       )
       (builtins.attrNames config.sops2env.variables)
     );
 
     # setup env
-    programs.zsh.initContent = mkIf config.programs.zsh.enable ''
+    programs.zsh.initContent = ''
       source ${config.sops.templates."sops.env".path}
     '';
-    programs.bash.initExtra = mkIf config.programs.bash.enable ''
+    programs.bash.initExtra = ''
       source ${config.sops.templates."sops.env".path}
     '';
   };

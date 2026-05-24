@@ -22,11 +22,7 @@
       system = "x86_64-linux";
       specialArgs = {inherit inputs info;};
       modules = [
-        ./system/wsl.nix
-        ./system/nix.nix
-        ./system/home.nix
-        ./system/incus.nix
-        ./system/sops.nix
+        ./system/all.nix
       ];
     };
   };
