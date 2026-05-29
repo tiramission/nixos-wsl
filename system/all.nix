@@ -3,7 +3,9 @@
     ./wsl.nix
     ./nix.nix
     ./home.nix
-    ./incus.nix
     ./sops.nix
+
+    ./components/incus.nix
+    ./components/docker.nix
   ];
 }
