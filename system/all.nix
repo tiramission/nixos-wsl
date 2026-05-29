@@ -7,5 +7,6 @@
 
     ./components/incus.nix
     ./components/docker.nix
+    ./components/binfmt.nix
   ];
 }
