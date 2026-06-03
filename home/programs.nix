@@ -11,6 +11,7 @@ in {
     ./programs.d/vim.nix
     ./programs.d/uv.nix
     ./programs.d/go.nix
+    ./programs.d/ssh.nix
   ];
 
   programs = enablePrograms [
