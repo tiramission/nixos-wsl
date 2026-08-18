@@ -6,5 +6,6 @@
     sops
     ssh-to-age
     nh
+    opentofu
   ];
 }
