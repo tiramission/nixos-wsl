@@ -6,6 +6,9 @@
     sops
     ssh-to-age
     nh
+    bun
     opentofu
+    kind
+    kubectl
   ];
 }

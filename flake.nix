@@ -13,6 +13,8 @@
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    mynixvim.url = "github:tiramission/nixvim";
   };
 
   outputs = inputs: let

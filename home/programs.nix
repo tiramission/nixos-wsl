@@ -12,6 +12,7 @@ in {
     ./programs.d/uv.nix
     ./programs.d/go.nix
     ./programs.d/ssh.nix
+    ./programs.d/opencode.nix
   ];
 
   programs = enablePrograms [
