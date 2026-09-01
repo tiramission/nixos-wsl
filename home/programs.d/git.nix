@@ -8,8 +8,8 @@
         user.email = info.git.email;
         safe.directory = "*";
         init.defaultBranch = "main";
-        gpg.format = "ssh";
-        user.signingkey = info.git.sign-key;
+        # gpg.format = "ssh";
+        user.signingkey = info.git.gpg-keyid;
         commit.gpgsign = true;
       };
     };

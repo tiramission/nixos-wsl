@@ -7,6 +7,7 @@
 
     ./components/incus.nix
     ./components/docker.nix
+    ./components/gpg.nix
     # ./components/binfmt.nix
   ];
 }

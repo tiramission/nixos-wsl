@@ -8,6 +8,6 @@
   ];
 
   home.stateVersion = osConfig.system.nixos.release;
-  home.sessionPath = ["$HOME/.local/bin"];
+  home.sessionPath = ["$HOME/.local/bin" "$HOME/.cache/.bun/bin"];
   xdg.enable = true;
 }
